@@ -5,24 +5,25 @@
       "includePath": [
         "${workspaceFolder}/**",
         "/Users/noahzhou/Desktop/actually important code/elevate PROS/proselevatereal/include",
-        "/Users/noahzhou/Documents/proselevatereal/include"
+        "/Users/noahzhou/Documents/proselevatereal/include",
+        "/home/archons/Downloads/proselevatereal/proselevatereal/include"
       ],
       "defines": [
         "_DEBUG",
         "UNICODE",
         "_UNICODE"
       ],
-      "compilerPath": "/Users/noahzhou/Library/Application Support/Code/User/globalStorage/sigbots.pros/install/pros-toolchain-macos/bin/arm-none-eabi-g++",
+      "compilerPath": "/home/archons/.config/Code/User/globalStorage/sigbots.pros/install/pros-toolchain-linux/bin/arm-none-eabi-g++",
       "cStandard": "gnu11",
       "cppStandard": "gnu++20",
       "intelliSenseMode": "gcc-arm",
-      "compileCommands": "/Users/noahzhou/Documents/proselevatereal/compile_commands.json",
+      "compileCommands": "/home/archons/Downloads/proselevatereal/proselevatereal/compile_commands.json",
       "macFrameworkPath": [
         "/System/Library/Frameworks"
       ],
       "browse": {
         "path": [
-          "/Users/noahzhou/Documents/proselevatereal"
+          "/home/archons/Downloads/proselevatereal/proselevatereal"
         ],
         "limitSymbolsToIncludedHeaders": true,
         "databaseFilename": ""
