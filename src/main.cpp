@@ -12,22 +12,6 @@ bool pressed = false;
 // pros::Imu imu_sensor(5); // temp imu init
 int count = 0;
 /**
- * A callback function for LLEMU's center button.
- *
- * When this callback is fired, it will toggle line 2 of the LCD text between
- * "I was pressed!" and nothing.
-
-void on_center_button() { // autonnomous selector test. TBA //added in void autonomous()
-	static bool pressed = false;
-	pressed = !pressed;
-	if (pressed) {
-		pros::lcd::set_text(2, "I was pressed!");
-	} else {
-		pros::lcd::clear_line(2);
-	}
-}
- */
-/**
  * Runs initialization code. This occurs as soon as the program is started.
  *
  * All other competition modes are blocked by initialize; it is recommended
@@ -35,20 +19,6 @@ void on_center_button() { // autonnomous selector test. TBA //added in void auto
  */	
 void initialize()
 {
-	// pros::lcd::initialize();
-	// pros::lcd::set_text(2, "test");
-
-	// pros::lcd::register_btn1_cb(on_center_button);
-	// int time = pros::millis();
-	// int iter = 0;
-	// while (imu_sensor.is_calibrating())
-	// {
-	// 	printf("IMU calibrating... %d\n", iter);
-	// 	iter += 10;
-	// 	pros::delay(10);
-	// }
-	// printf("IMU is done calibrating (took %d ms)\n", iter - time);
-	// pros::delay(1000);
 	selector::init();
 }
 
@@ -87,40 +57,7 @@ void competition_initialize()
 	elevate2.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 }
 
-/**
- * Runs the user autonomous code. This function will be started in its own task
- * with the default priority and stack size whenever the robot is enabled via
- * the Field Management System or the VEX Competition Switch in the autonomous
- * mode. Alternatively, this function may be called in initialize or opcontrol
- * for non-competition testing purposes.
- *
- * If the robot is disabled or communications is lost, the autonomous task
- * will be stopped. Re-enabling the robot will restart the task, not re-start it
- * from where it left off.
- */
-// float accurateRotation(float target){
-// 	// using namespace pros;
-// 	imu_sensor.tare_rotation(); //IMU_PORT
-// 	double current = imu_sensor.get_rotation();
-// 	double target = target;
-// 	double tolerance = 0.5; //deg tolerance
-// 	while (current != target){
-// 		if (current > target-tolerance){
-// 			rightwheel.move_velocity(50);
-// 			leftwheel.move_velocity(-50);
-// 		}
-// 		else if (current < target+tolerance){
-// 			rightwheel.move_velocity(-50);
-// 			leftwheel.move_velocity(50);
-// 		}
-// 		else{
-// 			rightwheel.move_velocity(0);
-// 			leftwheel.move_velocity(0);
-// 		}
-// 		current = imu_sensor.get_rotation();
-// 	}
-// }
-void autonomous() //e
+void autonomous()
 {
 	/**
 	change names in autoSelect/selection.h for gui names
@@ -149,18 +86,6 @@ void autonomous() //e
 		drive->turnAngle(100_deg);
 		drive->setMaxVelocity(200);
 		drive->moveDistance(15_in);
-		// master.print(0, 0, "^ 14_in");
-		// drive->moveDistance(14_in);
-		// leftwheel.move_velocity(-127);
-		// rightwheel.move_velocity(127);	
-		// pros::delay(1000);
-		// leftwheel.move_velocity(0);
-		// rightwheel.move_velocity(0);
-		// for (int i = 0; i < 5; i++)
-		// {
-		// 	drive->moveDistanceAsync(-3_in); 
-		// 	drive->moveDistanceAsync(3_in);
-		// }
 	}
 	else if (selector::auton == 2)
 	{ // run auton for Back Red
@@ -178,17 +103,6 @@ void autonomous() //e
 		drive->setMaxVelocity(200);
 		master.print(0, 0, "^ 10_in");
 		drive -> moveDistance(10_in);
-		// leftwheel.move_velocity(-127);
-		// rightwheel.move_velocity(127);	
-		// pros::delay(1000);
-		// leftwheel.move_velocity(0);
-		// rightwheel.move_velocity(0);
-		
-		// for (int i = 0; i < 5; i++)
-		// {
-		// 	drive->moveDistanceAsync(-3_in); 
-		// 	drive->moveDistanceAsync(3_in);
-		// }
 	}
 	else if (selector::auton == -2)
 	{ // run auton for Back Blue; commented out because throws error if else block is empty
@@ -196,10 +110,6 @@ void autonomous() //e
 		drive->moveDistance(22_in); // move 22 inches forward
 		master.print(0, 0, "> 100");
 		drive->turnAngle(-90_deg);
-	}
-	// else if(selector::auton == 0){ //run auton for Skills }
-	// else
-	{ // do nothing }
 	}
 }
 /**
@@ -237,19 +147,7 @@ void opcontrol()
 	{
 		rightx = master.get_analog(ANALOG_LEFT_X);
 		righty = master.get_analog(ANALOG_LEFT_Y);
-		// lefty = master.get_analog(ANALOG_RIGHT_Y)-deadzone;
-
-		// pros::lcd::print(0, "%d %d %d", (pros::lcd::read_buttons() & LCD_BTN_LEFT) >> 2,
-		//                  (pros::lcd::read_buttons() & LCD_BTN_CENTER) >> 1,
-		//                  (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0); // debug functions
 		double lefty = master.get_analog(ANALOG_RIGHT_Y);
-		// if (lefty <= -3 || lefty >= 3) {
-		// 	flywheel = -lefty;
-		// 	flywheel1 = lefty;
-		// 	master.print(1, 0, "Flw speed: %f                ", static_cast<float>(-lefty));
-		// 	double a=flywheel1.get_actual_velocity();
-		// 	master.print(2, 0, "%f", a);
-		// }
 		if (master.get_digital(DIGITAL_LEFT))
 		{
 			pressed = true;
@@ -271,11 +169,6 @@ void opcontrol()
 			rightwheel = -righty + rightx;
 			leftwheel = righty + rightx;
 		}
-		// if (lefty != 0; lefty >= 7 || lefty <= -7)
-		// {
-		// 	flywheel.move_velocity(-lefty);
-		// 	flywheel1.move_velocity(lefty);
-		// }
 
 		if (master.get_digital(DIGITAL_UP))
 		{
