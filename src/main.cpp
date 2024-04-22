@@ -96,7 +96,6 @@ void autonomous()
 	}
 	else if (selector::auton == -1)
 	{ // run auton for Front Blue
-		master.print(0, 0, "^ 22_in");
 		drive->moveDistance(26_in); // move 22 inches forward
 		master.print(0, 0, "> 100");
 		drive->turnAngle(-90_deg);
@@ -145,7 +144,7 @@ void opcontrol()
 
 	while (true)
 	{
-		rightx = master.get_analog(ANALOG_LEFT_X);
+		rightx = master.get_analog(ANALOG_RIGHT_X);
 		righty = master.get_analog(ANALOG_LEFT_Y);
 		double lefty = master.get_analog(ANALOG_RIGHT_Y);
 		if (master.get_digital(DIGITAL_LEFT))
