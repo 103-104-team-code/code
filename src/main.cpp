@@ -109,7 +109,7 @@ void autonomous()
 		drive->moveDistance(22_in); // move 22 inches forward
 		master.print(0, 0, "> 100");
 		drive->turnAngle(-90_deg);
-	}sadsadsadasd
+	}
 }//test
 /**
  * Runs the operator control code. This function will be started in its own task
