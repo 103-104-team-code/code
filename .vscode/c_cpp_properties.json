@@ -4,9 +4,7 @@
       "name": "PROS Project",
       "includePath": [
         "${workspaceFolder}/**",
-        "/Users/noahzhou/Desktop/actually important code/elevate PROS/proselevatereal/include",
-        "/Users/noahzhou/Documents/proselevatereal/include",
-        "/home/archons/Downloads/proselevatereal/proselevatereal/include"
+        "/home/archons/code/robots/code_104/include"
       ],
       "defines": [
         "_DEBUG",
@@ -17,13 +15,13 @@
       "cStandard": "gnu11",
       "cppStandard": "gnu++20",
       "intelliSenseMode": "gcc-arm",
-      "compileCommands": "/home/archons/Downloads/proselevatereal/proselevatereal/compile_commands.json",
+      "compileCommands": "/home/archons/code/robots/code_104/compile_commands.json",
       "macFrameworkPath": [
         "/System/Library/Frameworks"
       ],
       "browse": {
         "path": [
-          "/home/archons/Downloads/proselevatereal/proselevatereal"
+          "/home/archons/code/robots/code_104"
         ],
         "limitSymbolsToIncludedHeaders": true,
         "databaseFilename": ""
