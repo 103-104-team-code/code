@@ -7,14 +7,16 @@
         "/Users/noahzhou/Desktop/actually important code/elevate PROS/proselevatereal/include",
         "/Users/noahzhou/Documents/proselevatereal/include",
         "/home/archons/Downloads/proselevatereal/proselevatereal/include",
-        "/home/pablonara/Documents/ImportantCode/code_104/include"
+        "/home/pablonara/Documents/ImportantCode/code_104/include",
+        "c:\\Users\\noah.zhou\\OneDrive - School District No. 36 (Surrey)\\Downloads\\103-104-team-code-code_104-8c13278\\103-104-team-code-code_104-8c13278\\include",
+        "c:\\Users\\noah.zhou\\OneDrive - School District No. 36 (Surrey)\\Downloads\\103-104-team-code-code_104-8c13278 - Copy\\103-104-team-code-code_104-8c13278\\include"
       ],
       "defines": [
         "_DEBUG",
         "UNICODE",
         "_UNICODE"
       ],
-      "compilerPath": "/home/pablonara/.config/VSCodium/User/globalStorage/sigbots.pros/install/pros-toolchain-linux/bin/arm-none-eabi-g++",
+      "compilerPath": "c:\\Users\\noah.zhou\\AppData\\Roaming\\Code\\User\\globalStorage\\sigbots.pros\\install\\pros-toolchain-windows\\usr\\bin\\arm-none-eabi-g++",
       "cStandard": "gnu11",
       "cppStandard": "gnu++20",
       "intelliSenseMode": "gcc-arm",
@@ -24,7 +26,7 @@
       ],
       "browse": {
         "path": [
-          "/home/pablonara/Documents/ImportantCode/code_104"
+          "c:\\Users\\noah.zhou\\OneDrive - School District No. 36 (Surrey)\\Downloads\\103-104-team-code-code_104-8c13278 - Copy\\103-104-team-code-code_104-8c13278"
         ],
         "limitSymbolsToIncludedHeaders": true,
         "databaseFilename": ""

@@ -56,5 +56,6 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp"
-    }
+    },
+    "pros.Beta: Enable Experimental Features": true
 }
